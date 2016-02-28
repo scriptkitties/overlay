@@ -49,11 +49,11 @@ pkg_postinst() {
     if use dracut ; then
         einfo "Generating initramfs for kernel: ${MY_PV}"
 
-        if dracut -f -q "${MY_PV}" ; then
+    if dracut -f --kver "${MY_PV}" ; then
             einfo "Initramfs successfully generated!"
         else
             ewarn "Failed to generate initramfs for kernel: ${MY_PV}"
-            die "Failed to generate initramfs for kernel: ${MY_PV}"
+            die   "Failed to generate initramfs for kernel: ${MY_PV}"
         fi
     else
         elog "\nTo make use of this kernel, you need to generate an initramfs."
