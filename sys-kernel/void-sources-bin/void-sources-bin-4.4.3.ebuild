@@ -24,7 +24,10 @@ RESTRICT="mirror strip"
 LICENSE="GPL-2"
 SLOT="${PV}"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="dracut"
+RDEPEND="
+    dracut? ( sys-kernel/dracut )
+"
 PDEPEND="
     =sys-kernel/void-sources-headers-bin-${PV}
 "
@@ -39,6 +42,11 @@ src_install() {
     mv boot "${D}" || die
     dodir /lib
     mv usr/lib/modules "${D}"/lib/modules || die
+
+    if use dracut ; then
+        dracut -f -q "${MY_PV}" || die "Failed to regenerate initramfs"
+    fi
+
 }
 
 pkg_postinst() {
