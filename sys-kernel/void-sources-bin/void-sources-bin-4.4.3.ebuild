@@ -44,13 +44,21 @@ src_install() {
     mv usr/lib/modules "${D}"/lib/modules || die
 
     if use dracut ; then
-        dracut -f -q "${MY_PV}" || die "Failed to regenerate initramfs"
+        einfo "Generating initramfs for kernel: ${MY_PV}"
+
+        if dracut -f -q "${MY_PV}" ; then
+            einfo "Initramfs successfully generated!"
+        else
+            die "Failed to generate initramfs for kernel: ${MY_PV}"
+        fi
     fi
 
 }
 
 pkg_postinst() {
-    elog "\nTo make use of this kernel, you need to generate an initramfs."
-    elog "It's recommended you accomplish this using dracut. e.g."
-    elog "\tdracut --kver ${ARCH}-${PV}-void\n"
+    if ! use dracut ; then
+        elog "\nTo make use of this kernel, you need to generate an initramfs."
+        elog "It's recommended you accomplish this using dracut. e.g."
+        elog "\tdracut --kver ${ARCH}-${PV}-void\n"
+    fi
 }
