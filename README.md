@@ -1,5 +1,5 @@
 # Installation
-Add this to `/etc/repos.conf/sk-overlay.conf`.
+Add this to `/etc/portage/repos.conf/sk-overlay.conf`.
 
 ```
 [sk-overlay]
