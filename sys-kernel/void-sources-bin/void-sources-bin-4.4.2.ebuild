@@ -9,7 +9,7 @@ HOMEPAGE="https://voidlinux.eu/"
 
 MY_PV="${PV}_1"
 
-SRC_BASE="http://repo.voidlinux.eu/current/linux"
+SRC_BASE="http://archive.voidlinux.eu/glibc/2016-02-25/current/linux"
 SRC_AMD64_URI="${SRC_BASE}4.4-${MY_PV}.x86_64.xbps"
 SRC_X86_URI="${SRC_BASE}4.4-${MY_PV}.i686.xbps"
 
@@ -49,7 +49,7 @@ pkg_postinst() {
     if use dracut ; then
         einfo "Generating initramfs for kernel: ${MY_PV}"
 
-    if dracut -f --kver "${MY_PV}" ; then
+        if dracut -f --kver "${MY_PV}" ; then
             einfo "Initramfs successfully generated!"
         else
             ewarn "Failed to generate initramfs for kernel: ${MY_PV}"
