@@ -9,7 +9,7 @@ HOMEPAGE="https://voidlinux.eu/"
 
 MY_PV="${PV}_1"
 
-SRC_BASE="http://archive.voidlinux.eu/glibc/2016-03-07/current/linux"
+SRC_BASE="http://repo.voidlinux.eu/current/linux"
 SRC_AMD64_URI="${SRC_BASE}4.4-headers-${MY_PV}.x86_64.xbps"
 SRC_X86_URI="${SRC_BASE}4.4-headers-${MY_PV}.i686.xbps"
 
