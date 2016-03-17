@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst
+DESCRIPTION=Void Linux distribution kernel
+EAPI=5
+HOMEPAGE=https://voidlinux.eu/
+IUSE=dracut
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+PDEPEND==sys-kernel/void-sources-headers-bin-4.1.19
+RDEPEND=dracut? ( sys-kernel/dracut )
+RESTRICT=mirror strip
+SLOT=4.1.19
+SRC_URI=amd64? ( http://repo.voidlinux.eu/current/linux4.1-4.1.19_1.x86_64.xbps -> void-linux_amd64-bin-4.1.19.tar.xz ) x86? ( http://repo.voidlinux.eu/current/linux4.1-4.1.19_1.i686.xbps -> void-linux_i386-bin-4.1.19.tar.xz )
+_md5_=ee36178390b8fde7a054c1e6ef5b2563
