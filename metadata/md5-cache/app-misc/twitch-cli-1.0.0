@@ -1,0 +1,8 @@
+DEFINED_PHASES=install
+DESCRIPTION=Command line application for dealing with Twitch
+EAPI=5
+KEYWORDS=amd64 ~x86
+LICENSE=GPLv3
+SLOT=0
+SRC_URI=https://github.com/Tyil/twitch-cli/archive/v1.0.0.tar.gz
+_md5_=a71c8889250765845dc8d9b054c9a2ff

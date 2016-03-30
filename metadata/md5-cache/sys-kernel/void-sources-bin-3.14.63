@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst
+DESCRIPTION=Void Linux distribution kernel
+EAPI=5
+HOMEPAGE=https://voidlinux.eu/
+IUSE=dracut
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+PDEPEND==sys-kernel/void-sources-headers-bin-3.14.63
+RDEPEND=dracut? ( sys-kernel/dracut )
+RESTRICT=mirror strip
+SLOT=3.14.63
+SRC_URI=amd64? ( http://repo.voidlinux.eu/current/linux3.14-3.14.63_1.x86_64.xbps -> void-linux_amd64-bin-3.14.63.tar.xz ) x86? ( http://repo.voidlinux.eu/current/linux3.14-3.14.63_1.i686.xbps -> void-linux_i386-bin-3.14.63.tar.xz )
+_md5_=cd904a3ffaa707e8dbf23549745dfae2

@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile configure install postinst
+DESCRIPTION=Void Linux kernel headers
+EAPI=5
+HOMEPAGE=https://voidlinux.eu/
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND==sys-kernel/void-sources-bin-3.14.63
+RESTRICT=mirror strip
+SLOT=3.14.63
+SRC_URI=amd64? ( http://repo.voidlinux.eu/current/linux3.14-headers-3.14.63_1.x86_64.xbps -> void-linux-headers_amd64-bin-3.14.63.tar.xz ) x86? ( http://repo.voidlinux.eu/current/linux3.14-headers-3.14.63_1.i686.xbps -> void-linux-headers_i386-bin-3.14.63.tar.xz )
+_md5_=9a40819b7a8240e7640d7fa89b3eb1d9
