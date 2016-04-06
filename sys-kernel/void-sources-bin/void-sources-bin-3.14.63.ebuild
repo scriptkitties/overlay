@@ -15,8 +15,8 @@ SRC_X86_URI="${SRC_BASE}3.14-${MY_PV}.i686.xbps"
 
 # .xbps is actually just .tar.xz. Rename it as such.
 SRC_URI="
-    amd64? ( ${SRC_AMD64_URI} -> void-linux_amd64-bin-${PV}.tar.xz )
-    x86?   ( ${SRC_X86_URI}   -> void-linux_i386-bin-${PV}.tar.xz )
+	amd64? ( ${SRC_AMD64_URI} -> void-linux_amd64-bin-${PV}.tar.xz )
+	x86?   ( ${SRC_X86_URI}   -> void-linux_i386-bin-${PV}.tar.xz )
 "
 
 RESTRICT="mirror strip"
@@ -26,10 +26,10 @@ SLOT="${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE="dracut"
 RDEPEND="
-    dracut? ( sys-kernel/dracut )
+	dracut? ( sys-kernel/dracut )
 "
 PDEPEND="
-    =sys-kernel/void-sources-headers-bin-${PV}
+	=sys-kernel/void-sources-headers-bin-${PV}
 "
 
 S=${WORKDIR}
@@ -39,25 +39,24 @@ src_configure() { :; }
 src_compile()   { :; }
 
 src_install() {
-    mv boot "${D}" || die
-    dodir /lib
-    mv usr/lib/modules "${D}"/lib/modules || die
-
+	mv boot "${D}" || die
+	dodir /lib
+	mv usr/lib/modules "${D}"/lib/modules || die
 }
 
 pkg_postinst() {
-    if use dracut ; then
-        einfo "Generating initramfs for kernel: ${MY_PV}"
-
-        if dracut -f --kver "${MY_PV}" ; then
-            einfo "Initramfs successfully generated!"
-        else
-            ewarn "Failed to generate initramfs for kernel: ${MY_PV}"
-            die "Failed to generate initramfs for kernel: ${MY_PV}"
-        fi
-    else
-        elog "\nTo make use of this kernel, you need to generate an initramfs."
-        elog "It's recommended you accomplish this using dracut. e.g."
-        elog "\tdracut --kver ${ARCH}-${PV}-void\n"
-    fi
+	if use dracut ; then
+		einfo "Generating initramfs for kernel: ${MY_PV}"
+	
+		if dracut -f --kver "${MY_PV}" ; then
+			einfo "Initramfs successfully generated!"
+		else
+			ewarn "Failed to generate initramfs for kernel: ${MY_PV}"
+			die "Failed to generate initramfs for kernel: ${MY_PV}"
+		fi
+	else
+		elog "\nTo make use of this kernel, you need to generate an initramfs."
+		elog "It's recommended you accomplish this using dracut. e.g."
+		elog "\tdracut --kver ${ARCH}-${PV}-void\n"
+	fi
 }
