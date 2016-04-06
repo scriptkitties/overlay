@@ -47,7 +47,7 @@ src_install() {
 pkg_postinst() {
 	if use dracut ; then
 		einfo "Generating initramfs for kernel: ${MY_PV}"
-	
+
 		if dracut -f --kver "${MY_PV}" ; then
 			einfo "Initramfs successfully generated!"
 		else
