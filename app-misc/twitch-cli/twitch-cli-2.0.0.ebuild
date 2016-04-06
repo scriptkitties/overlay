@@ -7,7 +7,7 @@ EAPI=6
 inherit git-r3
 
 DESCRIPTION="Command line application for dealing with Twitch"
-HOMEPAGE="http://tyil.work/project/2"
+HOMEPAGE="http://tyil.work/project/twitch-cli"
 
 EGIT_REPO_URI="https://c.darenet.org/tyil/twitch.git"
 EGIT_COMMIT="v${PV}"
