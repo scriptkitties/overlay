@@ -12,4 +12,3 @@ src_install()
 {
 	dobin "src/twitch"
 }
-
