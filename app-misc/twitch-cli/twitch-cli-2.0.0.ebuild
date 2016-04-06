@@ -13,7 +13,7 @@ EGIT_REPO_URI="https://c.darenet.org/tyil/twitch.git"
 EGIT_COMMIT="v${PV}"
 EGIT_CHECKOUT_DIR=${S}/src/c.darenet.org/tyil/twitch
 
-LICENSE="GPL"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
