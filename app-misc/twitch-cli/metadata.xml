@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>p.spek@tyil.work</email>
+		<name>Patrick Spek</name>
+	</maintainer>
+	<longdescription lang="en">
+		An application written in Go to keep track of your favourite Twitch
+		streamers, without having to open their slow and awful website. Allows
+		you to start watching using mpv as well.
+	</longdescription>
+</pkgmetadata>
