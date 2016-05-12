@@ -28,6 +28,7 @@ src_prepare() {
 	GOPATH=${S} go get c.darenet.org/tyil/golog
 	GOPATH=${S} go get c.darenet.org/tyil/colorize
 	GOPATH=${S} go get github.com/libgit2/git2go
+	GOPATH=${S} go get gopkg.in/yaml.v2
 
 	mkdir -p "${S}/bin"
 
