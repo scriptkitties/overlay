@@ -7,11 +7,9 @@ EAPI=5
 DESCRIPTION="Void Linux distribution kernel"
 HOMEPAGE="https://voidlinux.eu/"
 
-MY_PV="${PV}_1"
-
 SRC_BASE="http://repo.voidlinux.eu/current/linux"
-SRC_AMD64_URI="${SRC_BASE}3.14-${MY_PV}.x86_64.xbps"
-SRC_X86_URI="${SRC_BASE}3.14-${MY_PV}.i686.xbps"
+SRC_AMD64_URI="${SRC_BASE}-${PV}.x86_64.xbps"
+SRC_X86_URI="${SRC_BASE}-${PV}.i686.xbps"
 
 # .xbps is actually just .tar.xz. Rename it as such.
 SRC_URI="
@@ -46,13 +44,13 @@ src_install() {
 
 pkg_postinst() {
 	if use dracut ; then
-		einfo "Generating initramfs for kernel: ${MY_PV}"
+		einfo "Generating initramfs for kernel: ${PV}"
 
-		if dracut -f --kver "${MY_PV}" ; then
+		if dracut -f --kver "${PV}" ; then
 			einfo "Initramfs successfully generated!"
 		else
-			ewarn "Failed to generate initramfs for kernel: ${MY_PV}"
-			die "Failed to generate initramfs for kernel: ${MY_PV}"
+			ewarn "Failed to generate initramfs for kernel: ${PV}"
+			die "Failed to generate initramfs for kernel: ${PV}"
 		fi
 	else
 		elog "\nTo make use of this kernel, you need to generate an initramfs."
