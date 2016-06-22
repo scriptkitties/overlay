@@ -6,7 +6,7 @@ EAPI=6
 
 DESCRIPTION="nondescript"
 HOMEPAGE="https://www.zerotier.com/"
-SRC_URI="https://github.com/zerotier/ZeroTierOne/archive/${PV}.tar.gz -> zerotier-${PV}.tar.gz"
+SRC_URI="https://github.com/zerotier/ZeroTierOne/archive/${PV}.tar.gz -> zerotier-one-${PV}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -25,7 +25,7 @@ RDEPEND="
 src_unpack() {
 	unpack "${A}"
 
-	mv "${WORKDIR}/ZeroTierOne-${PV}" "${WORKDIR}/zerotier-${PV}"
+	mv "${WORKDIR}/ZeroTierOne-${PV}" "${WORKDIR}/zerotier-one-${PV}"
 }
 
 src_compile() {
