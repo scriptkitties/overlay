@@ -50,6 +50,7 @@ src_compile() {
 }
 
 src_install() {
+	dobin "${S}/zerotier-one"
 	newbin "${S}/zerotier-one" "zerotier-cli"
 
 	if use "installer"
