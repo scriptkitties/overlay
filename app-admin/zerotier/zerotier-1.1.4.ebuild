@@ -11,10 +11,16 @@ SRC_URI="https://github.com/zerotier/ZeroTierOne/archive/${PV}.tar.gz -> zerotie
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
+IUSE="
+	controller
+	installer
+"
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="
+	${DEPEND}
+	controller? ( =dev-db/sqlite-3* )
+"
 
 src_unpack() {
 	unpack "${A}"
@@ -23,11 +29,31 @@ src_unpack() {
 }
 
 src_compile() {
-	make || die "make failed"
-	make installer || die "make installer failed"
+	local make_controller=0
+
+	if use "controller"
+	then
+		make_controller=1
+	fi
+
+	make \
+		ZT_ENABLE_NETWORK_CONTROLLER=${make_controller} \
+		|| die "make failed"
+
+	if use "installer"
+	then
+		make \
+			ZT_ENABLE_NETWORK_CONTROLLER=${make_controller} \
+			installer \
+			|| die "make installer failed"
+	fi
 }
 
 src_install() {
 	newbin "${S}/zerotier-one" "zerotier-cli"
-	newbin "${S}/ZeroTierOneInstaller-linux-x64-${PV//./_}" "zerotier-installer"
+
+	if use "installer"
+	then
+		newbin "${S}/ZeroTierOneInstaller-linux-x64-${PV//./_}" "zerotier-installer"
+	fi
 }
