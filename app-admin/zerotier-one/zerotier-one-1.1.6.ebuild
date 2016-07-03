@@ -13,7 +13,6 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="
 	controller
-	installer
 "
 
 DEPEND="
@@ -41,14 +40,6 @@ src_compile() {
 	make \
 		ZT_ENABLE_NETWORK_CONTROLLER=${make_controller} \
 		|| die "make failed"
-
-	if use "installer"
-	then
-		make \
-			ZT_ENABLE_NETWORK_CONTROLLER=${make_controller} \
-			installer \
-			|| die "make installer failed"
-	fi
 }
 
 src_install() {
