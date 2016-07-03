@@ -45,9 +45,4 @@ src_compile() {
 src_install() {
 	dobin "${S}/zerotier-one"
 	newbin "${S}/zerotier-one" "zerotier-cli"
-
-	if use "installer"
-	then
-		newbin "${S}/ZeroTierOneInstaller-linux-x64-${PV//./_}" "zerotier-installer"
-	fi
 }
