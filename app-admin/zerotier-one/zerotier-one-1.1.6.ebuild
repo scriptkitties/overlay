@@ -41,8 +41,3 @@ src_compile() {
 		ZT_ENABLE_NETWORK_CONTROLLER=${make_controller} \
 		|| die "make failed"
 }
-
-src_install() {
-	dobin "${S}/zerotier-one"
-	newbin "${S}/zerotier-one" "zerotier-cli"
-}
