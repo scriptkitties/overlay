@@ -16,7 +16,9 @@ IUSE="
 	installer
 "
 
-DEPEND=""
+DEPEND="
+	app-text/ronn
+"
 RDEPEND="
 	${DEPEND}
 	controller? ( =dev-db/sqlite-3* )
