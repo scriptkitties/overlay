@@ -16,7 +16,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=""
+DEPEND="
+	dev-lang/go
+"
 RDEPEND="${DEPEND}"
 
 src_unpack() {
