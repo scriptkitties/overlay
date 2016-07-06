@@ -5,7 +5,7 @@
 EAPI=6
 
 EGO_PN="c.darenet.org/tyil/${PN}"
-EGIT_COMMIT="f3a2749872cd51c249a597bc2ff70113e723cd80"
+EGIT_COMMIT="66b6220df3e9784ce1874263f03842f518618710"
 
 DESCRIPTION="Commandline application, written in Go, to install configuration files"
 HOMEPAGE="http://tyil.work/project/gohan"
