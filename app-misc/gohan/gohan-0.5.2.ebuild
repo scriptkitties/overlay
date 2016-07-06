@@ -18,9 +18,10 @@ IUSE=""
 
 DEPEND="
 	dev-go/colorize
+	dev-go/git2go
 	dev-go/golog
+	dev-go/yaml
 	dev-lang/go
-	dev-libs/libgit2
 "
 RDEPEND=""
 
@@ -31,9 +32,6 @@ src_unpack() {
 }
 
 src_prepare() {
-	GOPATH=${S} go get github.com/libgit2/git2go
-	GOPATH=${S} go get gopkg.in/yaml.v2
-
 	mkdir -p "${D}/bin"
 
 	eapply_user
