@@ -7,7 +7,7 @@ EAPI=6
 EGO_PN="github.com/libgit2/git2go"
 EGIT_COMMIT="8eaae73f85dd3df78df80d2dac066eb0866444ae"
 
-DESCRIPTION="Simple coloring library for output strings"
+DESCRIPTION="Go bindings for git"
 HOMEPAGE="https://github.com/libgit2/git2go/"
 SRC_URI="https://${EGO_PN}/archive/${EGIT_COMMIT}.zip -> ${P}.zip"
 
@@ -18,7 +18,7 @@ IUSE=""
 
 DEPEND="
 	dev-lang/go
-	dev-libs/libgit2
+	>=dev-libs/libgit2-0.24.0
 "
 RDEPEND="${DEPEND}"
 
