@@ -18,6 +18,7 @@ IUSE=""
 
 DEPEND="
 	dev-go/colorize
+	dev-lang/go
 "
 RDEPEND="${DEPEND}"
 
