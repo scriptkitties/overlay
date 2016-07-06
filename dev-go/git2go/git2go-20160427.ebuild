@@ -35,5 +35,5 @@ src_install() {
 	LIBDIR="${D}/usr/lib/go/src/${EGO_PN}"
 	mkdir -p "${LIBDIR}"
 
-	cp ${WORKDIR}/${P}/*.go "${LIBDIR}" || die "Failed installing library"
+	cp ${WORKDIR}/${P}/*.{c,go} "${LIBDIR}" || die "Failed installing library"
 }
