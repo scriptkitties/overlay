@@ -5,7 +5,7 @@
 EAPI=6
 
 EGO_PN="c.darenet.org/tyil/${PN}"
-EGIT_COMMIT="87539e1933c729bcd1b844cb641e4abc08cafbf8"
+EGIT_COMMIT="eae7225dfc63f97cbdb45fd1fc223baf11ae43f1"
 
 DESCRIPTION="Commandline application, written in Go, to install configuration files"
 HOMEPAGE="http://tyil.work/project/gohan"
@@ -28,12 +28,15 @@ RDEPEND=""
 src_unpack() {
 	unpack "${A}"
 	mkdir -p "${S}/src/${EGO_PN}"
-	mv ${WORKDIR}/${PN}-v${PV}-${EGIT_COMMIT}/* "${S}/src/${EGO_PN}"
+	mv ${WORKDIR}/${PN}-v${PV}-${EGIT_COMMIT}/* "${S}/src/${EGO_PN}/." || die "unpack failed"
 }
 
 src_compile() {
 	cd "${S}/src/${EGO_PN}"
-	emake || die "emake failed"
+	echo "$(pwd)"
+	emake \
+		GOPATH="${S}" \
+		|| die "emake failed"
 }
 
 src_install() {
