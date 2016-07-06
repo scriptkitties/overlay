@@ -4,8 +4,6 @@
 
 EAPI=6
 
-inherit golang-base
-
 EGO_PN="c.darenet.org/tyil/golog"
 EGIT_COMMIT="9354b2cb8c15c62062781e1ab37ce7842c59b2cb"
 
@@ -33,7 +31,7 @@ src_compile() {
 }
 
 src_install() {
-	LIBDIR="${D}/$(get_golibdir_gopath)/${EGO_PN}"
+	LIBDIR="${D}/usr/lib/go/src/${EGO_PN}"
 	mkdir -p "${LIBDIR}"
 
 	cp ${WORKDIR}/${P}/* "${LIBDIR}" || die "Failed installing library"
