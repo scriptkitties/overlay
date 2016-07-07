@@ -1,0 +1,13 @@
+diff --git a/fortune.c b/fortune.c
+--- a/fortune.c
++++ b/fortune.c
+@@ -19,7 +19,7 @@
+ #include <fcntl.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <strings.h>
++#include <string.h>
+ #include <time.h>
+ #include <locale.h>
+ #include <regex.h>
+
