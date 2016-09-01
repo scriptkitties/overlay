@@ -7,7 +7,7 @@ EAPI=6
 DESCRIPTION="Void Linux distribution kernel"
 HOMEPAGE="https://voidlinux.eu/"
 
-MY_PV="${PV}_2"
+MY_PV="${PV}_1"
 
 SRC_BASE="http://repo.voidlinux.eu/current"
 SRC_AMD64_URI="${SRC_BASE}/linux4.7-${MY_PV}.x86_64.xbps"
