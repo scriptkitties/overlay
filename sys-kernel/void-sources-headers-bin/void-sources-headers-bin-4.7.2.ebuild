@@ -7,11 +7,15 @@ EAPI=6
 DESCRIPTION="Void Linux kernel headers"
 HOMEPAGE="https://voidlinux.eu/"
 
+<<<<<<< HEAD:sys-kernel/void-sources-headers-bin/void-sources-headers-bin-4.7.2.ebuild
 MY_PV="${PV}_1"
+=======
+MY_PV=$(sed 's/\(.*\)\./\1\_/' <<< "${PV}")
+>>>>>>> a13cf4f... Reflects file name change on void repo:sys-kernel/void-sources-headers-bin/void-sources-headers-bin-4.7.1.ebuild
 
 SRC_BASE="http://repo.voidlinux.eu/current"
-SRC_AMD64_URI="${SRC_BASE}/linux4.7-headers-${MY_PV}.x86_64.xbps"
-SRC_X86_URI="${SRC_BASE}/linux4.7-headers-${MY_PV}.i686.xbps"
+SRC_AMD64_URI="${SRC_BASE}/linux-headers-${MY_PV}.x86_64.xbps"
+SRC_X86_URI="${SRC_BASE}/linux-headers-${MY_PV}.i686.xbps"
 
 # .xbps is actually just .tar.xz. Rename it as such.
 SRC_URI="
