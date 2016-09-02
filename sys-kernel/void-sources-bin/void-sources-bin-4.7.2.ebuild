@@ -7,11 +7,7 @@ EAPI=6
 DESCRIPTION="Void Linux distribution kernel"
 HOMEPAGE="https://voidlinux.eu/"
 
-<<<<<<< HEAD:sys-kernel/void-sources-bin/void-sources-bin-4.7.2.ebuild
 MY_PV="${PV}_1"
-=======
-MY_PV=$(sed 's/\(.*\)\./\1\_/' <<< "${PV}")
->>>>>>> a13cf4f... Reflects file name change on void repo:sys-kernel/void-sources-bin/void-sources-bin-4.7.1.ebuild
 
 SRC_BASE="http://repo.voidlinux.eu/current"
 SRC_AMD64_URI="${SRC_BASE}/linux-${MY_PV}.x86_64.xbps"
