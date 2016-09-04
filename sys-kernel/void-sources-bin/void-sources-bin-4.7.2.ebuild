@@ -59,4 +59,11 @@ pkg_postinst() {
 		elog "It's recommended you accomplish this using dracut. e.g."
 		elog "\tdracut --kver ${ARCH}-${PV}-void\n"
 	fi
+
+	einfo ""
+	einfo "If using grub, you will need to make sure you have a"
+	einfo "\troot=<device>"
+	einfo "listing in your grub configuration. Users of boot-update WILL need to"
+	einfo "configure this correct in their /etc/boot.conf."
+	einfo ""
 }
