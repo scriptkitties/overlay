@@ -15,16 +15,19 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="
 	cinnamon
-	dark
+	+dark
 	darker
 	gnome-shell
-	gtk2
-	gtk3
+	+gtk2
+	+gtk3
 	light
 	metacity
 	transparency
 	unity
 	xfwm
+"
+REQUIRED_USE="
+	|| ( dark darker light )
 "
 
 DEPEND="
