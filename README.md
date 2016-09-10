@@ -40,3 +40,11 @@ install `void-sources-bin`, you could simply:
 ```
 emerge -a void-sources-bin
 ```
+
+# Issues
+If you find any issues, such as repackaged software being out of date, you can
+either [open an issue][new-issue] or join the IRC channel and hit up the
+maintainer of the package. We reside on `irc.darenet.org` in `#scriptkitties`.
+
+
+[new-issue]: https://c.darenet.org/scriptkitties/overlay/issues/new
