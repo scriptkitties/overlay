@@ -45,6 +45,8 @@ src_install() {
 }
 
 pkg_postinst() {
+
+	# Optionally build an initramfs using dracut, this is how the void package deals with it.
 	if use dracut ; then
 		einfo "Generating initramfs for kernel: ${MY_PV}"
 
@@ -60,10 +62,9 @@ pkg_postinst() {
 		elog "\tdracut --kver ${ARCH}-${PV}-void\n"
 	fi
 
-	einfo ""
 	einfo "If using grub, you will need to make sure you have a"
 	einfo "\troot=<device>"
 	einfo "listing in your grub configuration. Users of boot-update WILL need to"
 	einfo "configure this correct in their /etc/boot.conf."
-	einfo ""
 }
+

@@ -1,7 +1,6 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
-
 EAPI=6
 
 DESCRIPTION="Void Linux kernel headers"
@@ -46,6 +45,9 @@ pkg_postinst() {
 	ln -s /usr/src/linux-"${PV}"-void /lib/modules/"${MY_PV}"/build  || die "Not able to symlink /usr/src/linux-"${PC}"-void to /lib/modules/"${MY_PV}"/build"
 	ln -s /usr/src/linux-"${PC}"-void /lib/modules/"${MY_PV}"/source || die "Not able to symlink /usr/src/linux-"${PC}"-void to /lib/modules/"${MY_PV}"/source"
 
-	# Put the config in the correct place
+	# Place the config in the expected place for a gentoo system.
 	mv /boot/config-"${MY_PV}" /usr/src/linux-"${PV}"-void/.config || die
+
+	# Copy the System.map. The kernel deps will need manual `depmodding` if this isn't in place.
+	cp /boot/System.map-"${MY_PV}" /usr/src/linux-"${PV}"-void/System.map || die "Not able to copy System.map"
 }
