@@ -8,10 +8,11 @@ DESCRIPTION="Void Linux distribution kernel"
 HOMEPAGE="https://voidlinux.eu/"
 
 MY_PV="${PV}_1"
+MY_MAJOR=$(echo "${MY_PV}" | awk -F. '{print $1"."$2}')
 
 SRC_BASE="http://repo.voidlinux.eu/current"
-SRC_AMD64_URI="${SRC_BASE}/linux4.7-${MY_PV}.x86_64.xbps"
-SRC_X86_URI="${SRC_BASE}/linux4.7-${MY_PV}.i686.xbps"
+SRC_AMD64_URI="${SRC_BASE}/linux${MY_MAJOR}-${MY_PV}.x86_64.xbps"
+SRC_X86_URI="${SRC_BASE}/linux${MY_MAJOR}-${MY_PV}.i686.xbps"
 
 # .xbps is actually just .tar.xz. Rename it as such.
 SRC_URI="
@@ -45,6 +46,8 @@ src_install() {
 }
 
 pkg_postinst() {
+
+	# Optionally build an initramfs using dracut, this is how the void package deals with it.
 	if use dracut ; then
 		einfo "Generating initramfs for kernel: ${MY_PV}"
 
@@ -60,10 +63,9 @@ pkg_postinst() {
 		elog "\tdracut --kver ${ARCH}-${PV}-void\n"
 	fi
 
-	einfo ""
 	einfo "If using grub, you will need to make sure you have a"
 	einfo "\troot=<device>"
 	einfo "listing in your grub configuration. Users of boot-update WILL need to"
 	einfo "configure this correct in their /etc/boot.conf."
-	einfo ""
 }
+
