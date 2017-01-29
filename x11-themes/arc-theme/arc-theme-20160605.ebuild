@@ -17,14 +17,14 @@ IUSE="
 	cinnamon
 	+dark
 	darker
-	gnome-shell
+	gnome
 	+gtk2
 	+gtk3
 	light
-	metacity
+	mate
 	transparency
 	unity
-	xfwm
+	xfce
 "
 REQUIRED_USE="
 	|| ( dark darker light )
@@ -48,12 +48,12 @@ src_configure() {
 		$(use_enable cinnamon) \
 		$(use_enable dark) \
 		$(use_enable darker) \
-		$(use_enable gnome-shell) \
+		$(use_enable gnome gnome-shell) \
 		$(use_enable gtk2) \
 		$(use_enable gtk3) \
 		$(use_enable light) \
-		$(use_enable metacity) \
+		$(use_enable mate metacity) \
 		$(use_enable transparency) \
 		$(use_enable unity) \
-		$(use_enable xfwm)
+		$(use_enable xfce xfwm)
 }
