@@ -5,7 +5,7 @@ Add this to `/etc/portage/repos.conf/sk-overlay.conf`.
 [sk-overlay]
 location   = /usr/local/overlay/sk-overlay
 sync-type  = git
-sync-uri   = https://c.darenet.org/scriptkitties/overlay.git
+sync-uri   = https://github.com/scriptkitties/overlay.git
 auto-sync  = yes
 ```
 
