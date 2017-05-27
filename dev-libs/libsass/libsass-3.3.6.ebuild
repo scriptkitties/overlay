@@ -16,10 +16,10 @@ IUSE="
 	static
 "
 
-DEPEND=""
-RDEPEND="
-	${DEPEND}
+DEPEND="
 	sys-devel/automake
+"
+RDEPEND="
 	sys-devel/libtool
 "
 
