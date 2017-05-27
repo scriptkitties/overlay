@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -68,4 +68,3 @@ pkg_postinst() {
 	einfo "listing in your grub configuration. Users of boot-update WILL need to"
 	einfo "configure this correct in their /etc/boot.conf."
 }
-

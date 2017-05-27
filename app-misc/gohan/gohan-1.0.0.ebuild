@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -27,9 +27,9 @@ DEPEND="
 RDEPEND=""
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 	mkdir -p "${S}/src/${EGO_PN}"
-	mv ${WORKDIR}/${PN}-v${PV}-${EGIT_COMMIT}/* "${S}/src/${EGO_PN}/." || die "unpack failed"
+	mv "${WORKDIR}/${PN}-v${PV}-${EGIT_COMMIT}"/* "${S}/src/${EGO_PN}/." || die "unpack failed"
 }
 
 src_compile() {
