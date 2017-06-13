@@ -6,7 +6,10 @@
 		<name>Patrick Spek</name>
 	</maintainer>
 	<longdescription lang="en">
-		An application to help you maintain your configuration files. Written
-		in Go, so no run-time dependencies on libraries.
+		A C/C++ implementation of a Sass compiler.
 	</longdescription>
+	<use>
+		<flag name="static">Build statically</flag>
+		<flag name="shared">Build as a shared lib</flag>
+	</use>
 </pkgmetadata>

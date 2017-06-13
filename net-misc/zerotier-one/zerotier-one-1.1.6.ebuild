@@ -1,6 +1,5 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -24,7 +23,7 @@ RDEPEND="
 "
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 
 	mv "${WORKDIR}/ZeroTierOne-${PV}" "${WORKDIR}/zerotier-one-${PV}"
 }

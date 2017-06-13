@@ -6,7 +6,7 @@
 		<name>Patrick Spek</name>
 	</maintainer>
 	<longdescription lang="en">
-		An application to help you maintain your configuration files. Written
-		in Go, so no run-time dependencies on libraries.
+		A tool to assist in converting large collections of music into another
+		format.
 	</longdescription>
 </pkgmetadata>

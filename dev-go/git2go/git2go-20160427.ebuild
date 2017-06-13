@@ -1,6 +1,5 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -23,7 +22,7 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 	mv "${WORKDIR}/${PN}-${EGIT_COMMIT}" "${WORKDIR}/${P}"
 }
 
@@ -35,5 +34,5 @@ src_install() {
 	LIBDIR="${D}/usr/lib/go/src/${EGO_PN}"
 	mkdir -p "${LIBDIR}"
 
-	cp ${WORKDIR}/${P}/*.{c,go} "${LIBDIR}" || die "Failed installing library"
+	cp "${WORKDIR}/${P}"/*.{c,go} "${LIBDIR}" || die "Failed installing library"
 }
