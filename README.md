@@ -1,6 +1,15 @@
 [![Build Status](https://travis-ci.org/scriptkitties/overlay.svg?branch=master)](https://travis-ci.org/scriptkitties/overlay)
 
 # Installation
+## Using layman
+Installation using layman is pretty straightforward:
+
+```
+layman -a scriptkitties
+emerge --sync
+```
+
+## Manual installation
 Add this to `/etc/portage/repos.conf/sk-overlay.conf`.
 
 ```
