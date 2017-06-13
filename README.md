@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/scriptkitties/overlay.svg?branch=master)](https://travis-ci.org/scriptkitties/overlay)
+
 # Installation
 Add this to `/etc/portage/repos.conf/sk-overlay.conf`.
 
