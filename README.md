@@ -58,10 +58,23 @@ either [open an issue][new-issue] or join the IRC channel and hit up the
 maintainer of the package. We reside on `irc.darenet.org` in `#scriptkitties`.
 
 # Contributing
-If you wish to contribute, you can always submit a MR on this repository. Our
-main activity happens around [DareNET][darenet], but use of our git repositories
-on other services is fine too. It can take a bit longer to notice, but you can
-poke a maintainer on IRC to speed up the process.
+In order to ensure the quality of our overlay, we require a certain way to work
+in order to get your ebuilds accepted.
+
+- Fork the overlay
+- Add/update/remove the ebuilds you want
+- Run `repoman` to ensure it meets the Gentoo quality standards
+  - If required, fix all issues reported by repoman
+- Create a commit using `repoman ci`
+  - Describe what you changed, in imperative form
+  - Make sure the first line of the message is no more than 79 characters
+  - Additional comments may be provided in the body of the commit message
+- Open a PR on the upstream overlay repository
+
+The PR will be checked using [Travis CI][travis] to make sure `repoman` has no
+further complaints on the overlay. Once the checks have passed, one of our
+maintainers will merge the commit for you. If it takes too long, drop by on
+IRC and ask for someone to look at it.
 
 ## Requirements
 There are some requirements your ebuild should adhere to in order to be
@@ -70,9 +83,8 @@ considered for our overlay.
 - Your commits have to be signed.
 - The software installed by the ebuild **must** be released under a free license
   (any license in `@FREE`).
-- You must include a metadata.xml with contact information and descriptions of
-  all USE flags in the ebuild.
 
 
-[new-issue]: https://c.darenet.org/scriptkitties/overlay/issues/new
+[new-issue]: https://github.com/scriptkitties/overlay/issues/new
 [darenet]: https://www.darenet.org
+[travis]: https://travis-ci.org
