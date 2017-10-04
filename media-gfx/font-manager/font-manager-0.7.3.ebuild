@@ -9,19 +9,21 @@ inherit eutils gnome2-utils vala
 DESCRIPTION="A font management application for the GNOME desktop"
 HOMEPAGE="https://font-manager.github.io"
 MY_PN=FontManager
-if [[ ${PV} == "9999" ]]; then
-	EGIT_REPO_URI="https://github.com/${MY_PN}/master.git"
-	inherit git-r3
-	KEYWORDS=""
-else
-	SRC_URI="https://github.com/${MY_PN}/master/tarball/${PV} -> ${P}.tar.gz"
-	inherit vcs-snapshot
-	KEYWORDS="~amd64 ~x86"
-fi
 LICENSE="GPL-3"
 SLOT="gtk3"
-KEYWORDS=""
 IUSE=""
+KEYWORDS="~amd64 ~x86"
+
+if [[ ${PV} == "9999" ]]
+then
+	inherit git-r3
+
+	EGIT_REPO_URI="https://github.com/${MY_PN}/master.git"
+else
+	inherit vcs-snapshot
+
+	SRC_URI="https://github.com/${MY_PN}/master/tarball/${PV} -> ${P}.tar.gz"
+fi
 
 RDEPEND="
 	>=dev-db/sqlite-3.8:3
