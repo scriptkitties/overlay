@@ -45,7 +45,7 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}/anki-2.1_beta-no-f-strings.patch"
-	sed -i -e 's/Exec=anki/Exec=runanki/g' anki.desktop
+	sed -i -e 's/Exec=anki/Exec=runanki/g' anki.desktop || die
 	sed -i -e "s/updates=True/updates=False/" \
 		aqt/profiles.py || die
 	sed -i -e 's,"web","anki/web",' aqt/mediasrv.py || die
