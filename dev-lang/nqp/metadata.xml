@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>p.spek@tyil.work</email>
+		<name>Patrick Spek</name>
+	</maintainer>
+	<longdescription lang="en">
+		This is "Not Quite Perl" -- a lightweight Perl 6-like environment for
+		virtual machines. The key feature of NQP is that it's designed to be a
+		very small environment (as compared with, say, perl6 or Rakudo) and is
+		focused on being a high-level way to create compilers and libraries for
+		virtual machines like MoarVM [1], the JVM, and others.
+
+		Unlike a full-fledged implementation of Perl 6, NQP strives to have as
+		small a runtime footprint as it can, while still providing a Perl 6
+		object model and regular expression engine for the virtual machine.
+	</longdescription>
+</pkgmetadata>
