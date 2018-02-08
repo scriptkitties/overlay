@@ -13,7 +13,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND=""
+RDEPEND="
+	virtual/libffi
+"
 
 src_unpack() {
 	unpack "${A}"
@@ -21,6 +23,10 @@ src_unpack() {
 }
 
 src_compile() {
-	perl Configure.pl
+	perl Configure.pl \
+		--libdir=$(get_libdir) \
+		--has-libffi \
+		--prefix=/usr
+
 	make
 }
