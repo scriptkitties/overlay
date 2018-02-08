@@ -18,7 +18,7 @@ RDEPEND="
 "
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 	mv "MoarVM-${PV}" "${P}"
 }
 
