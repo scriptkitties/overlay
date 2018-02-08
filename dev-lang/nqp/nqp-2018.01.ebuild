@@ -17,10 +17,8 @@ RDEPEND="
 	=dev-lang/moarvm-${PV}
 "
 
-src_compile() {
+src_configure() {
 	perl Configure.pl \
 		--backends=moar \
 		--prefix=/usr
-
-	make
 }
