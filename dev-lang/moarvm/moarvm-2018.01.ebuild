@@ -22,11 +22,9 @@ src_unpack() {
 	mv "MoarVM-${PV}" "${P}"
 }
 
-src_compile() {
+src_configure() {
 	perl Configure.pl \
 		--libdir=$(get_libdir) \
 		--has-libffi \
 		--prefix=/usr
-
-	make
 }
