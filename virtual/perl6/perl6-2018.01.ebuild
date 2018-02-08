@@ -7,7 +7,7 @@ DESCRIPTION="Virtual package to install Perl 6"
 HOMEPAGE=""
 SRC_URI=""
 
-LICENSE="Artistic-2"
+LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
