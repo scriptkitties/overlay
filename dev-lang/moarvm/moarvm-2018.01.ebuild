@@ -14,6 +14,9 @@ IUSE=""
 
 DEPEND=""
 RDEPEND="
+	dev-libs/libatomic_ops
+	>=dev-libs/libtommath-1.0
+	dev-libs/libuv
 	virtual/libffi
 "
 
@@ -25,6 +28,9 @@ src_unpack() {
 src_configure() {
 	perl Configure.pl \
 		--libdir=$(get_libdir) \
+		--has-libatomic_ops
 		--has-libffi \
+		--has-libtommath \
+		--has-libuv \
 		--prefix=/usr
 }
