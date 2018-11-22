@@ -1,0 +1,18 @@
+#! /usr/bin/env perl6
+
+sub MAIN (
+	*@words,
+) {
+	my @ebuilds = (run « git diff --name-status master », :out).out.lines.grep(*.ends-with(".ebuild"));
+
+	if (@ebuilds.elems != 1) {
+		exit note q:to/EOF/;
+			Committed ebuilds does not equal to 1. Each commit should only
+			contain a single ebuild update.
+			EOF
+	}
+
+	my $ebuild = @ebuilds.head.split("\t").tail.split("/").head(2).join("/");
+
+	run « git commit -S -m "$ebuild: @words.join(" ")" »;
+}

@@ -1,0 +1,58 @@
+#! /usr/bin/env perl6
+
+#| Build packages
+sub MAIN (
+	#| Host's path to the Portage tree.
+	Str:D :$tree = "/usr/portage",
+
+	#| Host's path to Portage's var dir. This holds binpkgs and distfiles.
+	Str:D :$var = "/var/portage",
+
+	#| Host's path to the root of the overlay.
+	Str:D :$root is copy = "",
+
+	#| A list of packages to build
+	*@packages,
+) {
+	@packages = $*IN.lines unless @packages;
+	$root = shell("git rev-parse --show-toplevel", :out).out.slurp.trim unless $root;
+
+	build-pkg($_, :$tree, :$var, root => $root.IO) for @packages;
+}
+
+#| Build a given package in a clean Docker container
+sub build-pkg (
+	#| The name of the package to build
+	Str:D $package,
+
+	#| Host's path to the Portage tree.
+	Str:D :$tree = "/usr/portage",
+
+	#| Host's path to Portage's var dir. This holds binpkgs and distfiles.
+	Str:D :$var = "/var/portage",
+
+	#| Path to overlay's root
+	IO::Path:D :$root,
+) {
+	my Pair @volumes = (
+		$tree => "/usr/portage",
+		$var => "/var/portage",
+		$root.add(".tools").add("etc").absolute => "/etc/portage",
+		$root.absolute => "/app",
+	);
+
+	my Str @cmd = <
+		docker
+		run
+	>;
+
+	for @volumes {
+		@cmd.push: "-v $_.key():$_.value()";
+	}
+
+	@cmd.push: "gentoo/stage3-amd64";
+	@cmd.push: "emerge";
+	@cmd.push: $package;
+
+	@cmd.join(" ").say;
+}

@@ -1,0 +1,31 @@
+#! /usr/bin/env sh
+
+set -e
+
+main()
+{
+  cmds=$(mktemp)
+
+  mkdir -p /usr/portage
+  mkdir -p /var/portage
+
+  # Sync latest portage tree
+  do_cmd docker run -v /usr/portage:/usr/portage gentoo/stage3-amd64 emerge -q --sync
+
+  # Run the script to generate the testing commands
+  do_cmd docker run -w /app -v "$(pwd):/app" rakudo-star sh .tools/bin/ci-mkdockercmds "$(pwd)" > "$cmds"
+
+  # Run the testing commands
+  while read -r cmd
+  do
+    do_cmd $cmd
+  done < "$cmds"
+}
+
+do_cmd()
+{
+  printf "> %s\n" "$*" >&2
+  $@
+}
+
+main "$@"

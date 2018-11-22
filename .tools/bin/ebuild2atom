@@ -1,0 +1,14 @@
+#! /usr/bin/env perl6
+
+#| Convert a path to an ebuild into an atom that can be passed to emerge.
+sub MAIN (*@ebuilds)
+{
+	@ebuilds = $*IN.lines unless @ebuilds;
+
+	for @ebuilds {
+		my $category = $_.split("/").head;
+		my $package = $_.split("/").tail.IO.extension("").Str;
+
+		say "=$category/$package"
+	}
+}
