@@ -1,11 +1,12 @@
-# Copyright 1999-2018 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
+# Copyright 2018 Patrick Spek <p.spek@tyil.nl>
+#
+# Distributed under the terms of the GNU Affero General Public License v3
 
 EAPI=6
 
 DESCRIPTION="A small Bash application to install the Rakudo Star Perl 6 distribution"
-HOMEPAGE="https://github.com/tyil/lonestar"
-SRC_URI="https://github.com/tyil/lonestar/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://gitlab.com/tyil/lonestar"
+SRC_URI="https://gitlab.com/tyil/lonestar/-/archive/v${PV}/lonestar-v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="AGPL-3"
 SLOT="0"
