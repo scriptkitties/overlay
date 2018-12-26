@@ -1,0 +1,23 @@
+#! /usr/bin/env sh
+
+set -e
+
+export PATH=$PATH:$(pwd)/.tools/bin
+export DEBIAN_FRONTEND=noninteractive
+
+hash -r
+
+{
+  # We need git for consecutive commands
+  apt update -qq
+  apt install -qqy git
+
+  # Make sure the latest `master` is also available to diff against
+  git fetch -a origin
+  git checkout master
+  git pull origin master
+  git checkout -
+} > /dev/null
+
+# Generate the testing commands
+updated-ebuilds | ebuild2atom | make-docker-commands --root="$1"

@@ -1,0 +1,11 @@
+#! /usr/bin/env perl6
+
+#| Get a list of all changed package atoms.
+sub MAIN ()
+{
+	(run « git diff --name-status master », :out).out.lines
+		.grep(*.ends-with(".ebuild"))
+		.map(*.split("\t").tail)
+		.map(*.say)
+		;
+}

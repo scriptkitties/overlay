@@ -6,7 +6,7 @@ EAPI=6
 
 DESCRIPTION="A small Bash application to install the Rakudo Star Perl 6 distribution"
 HOMEPAGE="https://gitlab.com/tyil/lonestar"
-SRC_URI="https://gitlab.com/tyil/lonestar/-/archive/v${PV}/lonestar-v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://gitlab.com/tyil/lonestar/-/archive/master/lonestar-master.tar.gz -> ${P}.tar.gz"
 
 LICENSE="AGPL-3"
 SLOT="0"

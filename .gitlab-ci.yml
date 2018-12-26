@@ -1,0 +1,13 @@
+image: docker:latest
+services:
+  - docker:dind
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - /usr/portage
+    - /var/portage
+    - /var/lib/docker
+
+build-ebuilds:
+  script:
+    - ./.tools/bin/ci-run-mr
