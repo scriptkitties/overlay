@@ -32,7 +32,7 @@ ruby_add_rdepend "
 all_ruby_prepare() {
 	ls -a
 	mkdir -p all
-	mv ${P} all/
+	mv "${P}" all/
 	sed -e '/git ls-files/d' -i "${WORKDIR}"/all/${P}/gist.gemspec
 }
 
