@@ -9,7 +9,7 @@ SRC_URI="https://gitlab.com/tyil/${PN}/-/archive/master/${PN}-master.tar.gz -> $
 
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE=""
 
 DEPEND=""
