@@ -23,15 +23,15 @@ IUSE="
 "
 
 RDEPEND="
-	bash? (app-shells/bash)
-	dash? (app-shells/dash)
-	fish? (app-shells/fish)
-	ksh? (app-shells/ksh)
-	sash? (app-shells/sash)
-	scsh? (app-shells/scsh)
-	tcsh? (app-shells/tcsh)
-	yash? (app-shells/yash)
-	zsh? (app-shells/zsh)
+	bash? ( app-shells/bash )
+	dash? ( app-shells/dash )
+	fish? ( app-shells/fish )
+	ksh? ( app-shells/ksh )
+	sash? ( app-shells/sash )
+	scsh? ( app-shells/scsh )
+	tcsh? ( app-shells/tcsh )
+	yash? ( app-shells/yash )
+	zsh? ( app-shells/zsh )
 "
 
 src_unpack() {
