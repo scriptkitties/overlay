@@ -19,6 +19,7 @@ IUSE="
 	tcsh
 	yash
 	zsh
+	+minimal
 "
 
 RDEPEND="
@@ -51,5 +52,11 @@ src_install() {
 	dobin bin/shct
 
 	mkdir -p "${D}/usr/share/shct"
-	cp install-cmds/* "${D}/usr/share/shct/"
+
+	if use minimal
+	then
+		cp install-cmds/gentoo "${D}/usr/share/shct/"
+	else
+		cp install-cmds/* "${D}/usr/share/shct/"
+	fi
 }
