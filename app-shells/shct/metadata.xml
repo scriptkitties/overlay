@@ -9,4 +9,36 @@
 		A POSIX shell compatible utility to test some shell code across a number
 		of available shells.
 	</longdescription>
+	<use>
+		<flag="bash">
+			Install the bash shell as a dependency.
+		</flag>
+		<flag="dash">
+			Install the dash shell as a dependency.
+		</flag>
+		<flag="fish">
+			Install the fish shell as a dependency.
+		</flag>
+		<flag="ksh">
+			Install the ksh shell as a dependency.
+		</flag>
+		<flag="sash">
+			Install the sash shell as a dependency.
+		</flag>
+		<flag="scsh">
+			Install the scsh shell as a dependency.
+		</flag>
+		<flag="tcsh">
+			Install the tcsh shell as a dependency.
+		</flag>
+		<flag="yash">
+			Install the yash shell as a dependency.
+		</flag>
+		<flag="zsh">
+			Install the zsh shell as a dependency.
+		</flag>
+		<flag="minimal">
+			Only install Gentoo's installation suggestions file.
+		</flag>
+	</use>
 </pkgmetadata>
