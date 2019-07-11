@@ -6,6 +6,7 @@ EAPI=7
 DESCRIPTION="SHell Compatibility Tester"
 HOMEPAGE="https://gitlab.com/tyil/shct"
 SRC_URI="https://gitlab.com/tyil/${PN}/-/archive/master/${PN}-master.tar.gz -> ${P}.tar.gz"
+S="${WORKDIR}/${PN}-v${PV}"
 
 LICENSE="AGPL-3"
 SLOT="0"
@@ -34,11 +35,6 @@ RDEPEND="
 	zsh? ( app-shells/zsh )
 "
 
-src_unpack() {
-	unpack "${A}"
-	mv -- "${PN}-master" "${P}"
-}
-
 src_prepare() {
 	eapply_user
 
@@ -51,12 +47,13 @@ src_prepare() {
 src_install() {
 	dobin bin/shct
 
-	mkdir -p "${D}/usr/share/shct"
+	# Add installation suggestions
+	insinto /usr/share/shct
 
 	if use minimal
 	then
-		cp install-cmds/gentoo "${D}/usr/share/shct/"
+		doins install-cmds/gentoo
 	else
-		cp install-cmds/* "${D}/usr/share/shct/"
+		doins -r install-cmds
 	fi
 }
