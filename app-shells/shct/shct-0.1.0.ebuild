@@ -10,11 +10,29 @@ SRC_URI="https://gitlab.com/tyil/${PN}/-/archive/v${PV}/${PN}-v${PV}.tar.gz -> $
 LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="
+	+bash
+	dash
+	fish
+	ksh
+	sash
+	scsh
+	tcsh
+	yash
+	zsh
+"
 
-DEPEND=""
-RDEPEND="${DEPEND}"
-BDEPEND=""
+RDEPEND="
+	bash? (app-shells/bash)
+	dash? (app-shells/dash)
+	fish? (app-shells/fish)
+	ksh? (app-shells/ksh)
+	sash? (app-shells/sash)
+	scsh? (app-shells/scsh)
+	tcsh? (app-shells/tcsh)
+	yash? (app-shells/yash)
+	zsh? (app-shells/zsh)
+"
 
 src_unpack() {
 	unpack "${A}"
