@@ -7,7 +7,7 @@ DESCRIPTION="SHell Compatibility Tester"
 HOMEPAGE="https://gitlab.com/tyil/shct"
 SRC_URI="https://gitlab.com/tyil/${PN}/-/archive/v${PV}/${PN}-v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="AGPL-3.0"
+LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
