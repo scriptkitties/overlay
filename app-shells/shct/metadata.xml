@@ -10,34 +10,34 @@
 		of available shells.
 	</longdescription>
 	<use>
-		<flag="bash">
+		<flag name="bash">
 			Install the bash shell as a dependency.
 		</flag>
-		<flag="dash">
+		<flag name="dash">
 			Install the dash shell as a dependency.
 		</flag>
-		<flag="fish">
+		<flag name="fish">
 			Install the fish shell as a dependency.
 		</flag>
-		<flag="ksh">
+		<flag name="ksh">
 			Install the ksh shell as a dependency.
 		</flag>
-		<flag="sash">
+		<flag name="sash">
 			Install the sash shell as a dependency.
 		</flag>
-		<flag="scsh">
+		<flag name="scsh">
 			Install the scsh shell as a dependency.
 		</flag>
-		<flag="tcsh">
+		<flag name="tcsh">
 			Install the tcsh shell as a dependency.
 		</flag>
-		<flag="yash">
+		<flag name="yash">
 			Install the yash shell as a dependency.
 		</flag>
-		<flag="zsh">
+		<flag name="zsh">
 			Install the zsh shell as a dependency.
 		</flag>
-		<flag="minimal">
+		<flag name="minimal">
 			Only install Gentoo's installation suggestions file.
 		</flag>
 	</use>

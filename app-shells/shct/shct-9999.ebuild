@@ -10,18 +10,8 @@ S="${WORKDIR}/${PN}-v${PV}"
 
 LICENSE="AGPL-3"
 SLOT="0"
-IUSE="
-	+bash
-	dash
-	fish
-	ksh
-	sash
-	scsh
-	tcsh
-	yash
-	zsh
-	+minimal
-"
+KEYWORDS=""
+IUSE="+bash dash fish ksh sash scsh tcsh yash zsh +minimal"
 
 RDEPEND="
 	bash? ( app-shells/bash )
