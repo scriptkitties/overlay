@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <maintainer type="person">
+        <email>brushdemon@live.com</email>
+        <name>brushy</name>
+    </maintainer>
+    <use>
+        <flag name="dracut">If set, build an initramfs using
+        <pkg>sys-kernel/dracut</pkg> after setting up the kernel.</flag>
+        <flag name="headers">Install the corresponding void-sources headers</flag>
+    </use>
+    <longdescription lang="en">
+        Binary builds of the Voidlinux kernels.
+    </longdescription>
+</pkgmetadata>
