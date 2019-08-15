@@ -23,8 +23,8 @@ LICENSE="GPL-2"
 SLOT="${PV}"
 KEYWORDS="~amd64"
 IUSE=""
-
-RDEPEND=""
+RDEPEND="
+	=sys-kernel/void-sources-bin-${PV}-r0"
 
 S=${WORKDIR}
 
@@ -39,8 +39,10 @@ src_install() {
 
 pkg_postinst() {
 	# Allow us to build externel kernel modules
+	rm /lib/modules/"${MY_PV}"/source;
+	rm /lib/modules/"${MY_PV}"/build;
 	ln -s /usr/src/linux-"${PV}"-void /lib/modules/"${MY_PV}"/build  || die "Not able to symlink /usr/src/linux-"${PC}"-void to /lib/modules/"${MY_PV}"/build"
-	ln -s /usr/src/linux-"${PC}"-void /lib/modules/"${MY_PV}"/source || die "Not able to symlink /usr/src/linux-"${PC}"-void to /lib/modules/"${MY_PV}"/source"
+	ln -s /usr/src/linux-"${PV}"-void /lib/modules/"${MY_PV}"/source || die "Not able to symlink /usr/src/linux-"${PC}"-void to /lib/modules/"${MY_PV}"/source"
 
 	# Place the config in the expected place for a gentoo system.
 	mv /boot/config-"${MY_PV}" /usr/src/linux-"${PV}"-void/.config || die
