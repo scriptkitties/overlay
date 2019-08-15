@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>brushdemon@live.com</email>
+		<name>brushy</name>
+	</maintainer>
+	<longdescription lang="en">
+		Headers for the binary builds of the Voidlinux kernels.
+	</longdescription>
+</pkgmetadata>
