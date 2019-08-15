@@ -20,7 +20,7 @@ SRC_URI="
 RESTRICT="mirror strip"
 
 LICENSE="GPL-2"
-SLOT="${PV}"
+SLOT="0"
 KEYWORDS="~amd64"
 IUSE="
 	dracut +headers
@@ -58,12 +58,12 @@ pkg_postinst() {
 		fi
 	else
 		elog "\nTo make use of this kernel, you need to generate an initramfs."
-		elog "It's recommended you accomplish this using dracut. e.g."
+		elog "It's recommended to use dracut. An example command is:"
 		elog "\tdracut --kver ${ARCH}-${PV}-void\n"
 	fi
 
 	einfo "If using grub, you will need to make sure you have a"
 	einfo "\troot=<device>"
-	einfo "listing in your grub configuration. Users of boot-update WILL need to"
-	einfo "configure this correct in their /etc/boot.conf."
+	einfo "listing in your grub configuration. Users of boot-update will need to"
+	einfo "configure this correctly in their /etc/boot.conf."
 }
