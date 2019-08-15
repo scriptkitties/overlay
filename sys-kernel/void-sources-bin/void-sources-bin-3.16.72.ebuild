@@ -20,17 +20,17 @@ SRC_URI="
 RESTRICT="mirror strip"
 
 LICENSE="GPL-2"
-SLOT="${MY_MAJOR}"
+SLOT="${PV}"
 KEYWORDS="~amd64"
 IUSE="
 	dracut +headers
 "
 
 RDEPEND="
-	dracut? ( sys-kernel/dracut )
-	headers? ( =sys-kernel/void-sources-headers-bin-${PV}-r0 )"
+	dracut? ( sys-kernel/dracut )"
 
-PDEPEND=""
+PDEPEND="
+	headers? ( =sys-kernel/void-sources-headers-bin-${PV}-r0 )"
 
 S=${WORKDIR}
 
