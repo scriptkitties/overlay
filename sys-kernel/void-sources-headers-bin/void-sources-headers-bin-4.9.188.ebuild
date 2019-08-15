@@ -20,7 +20,7 @@ SRC_URI="
 RESTRICT="mirror strip"
 
 LICENSE="GPL-2"
-SLOT="${PV}"
+SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 RDEPEND="
