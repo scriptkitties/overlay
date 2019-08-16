@@ -1,0 +1,36 @@
+stages:
+  - QA
+  - Test
+
+#
+# Quality Assurance
+#
+
+Repoman (scan):
+  stage: QA
+  image: registry.gitlab.com/tyil/docker-repoman
+  script: repoman scan
+
+Repoman (manifest-check):
+  stage: QA
+  image: registry.gitlab.com/tyil/docker-repoman
+  cache:
+    key: distfiles
+    paths:
+      - /var/cache/distfiles
+  script: repoman manifest-check
+
+#
+# Testing
+#
+
+Repoman (manifest):
+  stage: Test
+  image: registry.gitlab.com/tyil/docker-repoman
+  cache:
+    key: distfiles
+    paths:
+      - /var/cache/distfiles
+  script:
+    - repoman manifest
+    - git diff-index --quiet HEAD --
