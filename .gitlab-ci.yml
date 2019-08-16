@@ -8,16 +8,12 @@ stages:
 
 Repoman (scan):
   stage: QA
-  image:
-    name: chaoslab/repoman
-    entrypoint: ["/bin/sh"]
+  image: registry.gitlab.com/tyil/docker-repoman
   script: repoman scan
 
 Repoman (manifest-check):
   stage: QA
-  image:
-    name: chaoslab/repoman
-    entrypoint: ["/bin/sh"]
+  image: registry.gitlab.com/tyil/docker-repoman
   cache:
     key: distfiles
     paths:
@@ -30,13 +26,11 @@ Repoman (manifest-check):
 
 Repoman (manifest):
   stage: Test
-  image:
-    name: chaoslab/repoman
-    entrypoint: ["/bin/sh"]
+  image: registry.gitlab.com/tyil/docker-repoman
   cache:
     key: distfiles
     paths:
       - /var/cache/distfiles
-  before_script:
+  script:
     - repoman manifest
-  script: git diff-index --quiet HEAD --
+    - git diff-index --quiet HEAD --
