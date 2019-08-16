@@ -1,11 +1,42 @@
 stages:
   - QA
+  - Test
 
 #
 # Quality Assurance
 #
 
-Repoman:
+Repoman (scan):
   stage: QA
-  image: chaoslab/repoman
-  script: repoman -dx full
+  image:
+    name: chaoslab/repoman
+    entrypoint: ["/bin/sh"]
+  script: repoman scan
+
+Repoman (manifest-check):
+  stage: QA
+  image:
+    name: chaoslab/repoman
+    entrypoint: ["/bin/sh"]
+  cache:
+    key: distfiles
+    paths:
+      - /var/cache/distfiles
+  script: repoman manifest-check
+
+#
+# Testing
+#
+
+Repoman (manifest):
+  stage: Test
+  image:
+    name: chaoslab/repoman
+    entrypoint: ["/bin/sh"]
+  cache:
+    key: distfiles
+    paths:
+      - /var/cache/distfiles
+  before_script:
+    - repoman manifest
+  script: git diff-index --quiet HEAD --
