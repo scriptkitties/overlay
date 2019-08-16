@@ -1,0 +1,11 @@
+stages:
+  - QA
+
+#
+# Quality Assurance
+#
+
+Repoman:
+  stage: QA
+  image: chaoslab/repoman
+  script: repoman -dx full
