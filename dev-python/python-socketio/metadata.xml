@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>jacob@x0rz3q.com</email>
+		<name>Jacobus Thiessen</name>
+	</maintainer>
+	<longdescription lang="en">
+		Python Socket.IO server and client
+	</longdescription>
+</pkgmetadata>
