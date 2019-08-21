@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>p.spek@tyil.work</email>
+		<name>Patrick "tyil" Spek</name>
+	</maintainer>
+	<use>
+		<flag name="compile">
+			Compile and install binaries resulting from this Go package. When
+			unset, only installs the library files to /usr/lib/go.
+		</flag>
+	</use>
+	<longdescription lang="en">
+		go-version is a library for parsing versions and version constraints,
+		and verifying versions against a set of constraints. go-version can
+		sort a collection of versions properly, handles
+		prerelease/beta versions, can increment versions, etc.
+	</longdescription>
+</pkgmetadata>
