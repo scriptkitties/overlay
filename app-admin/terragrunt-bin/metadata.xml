@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>p.spek@tyil.work</email>
+		<name>Patrick "tyil" Spek</name>
+	</maintainer>
+	<longdescription lang="en">
+		Terragrunt is a thin wrapper for Terraform that provides extra tools
+		for keeping your Terraform configurations DRY, working with multiple
+		Terraform modules, and managing remote state.
+	</longdescription>
+</pkgmetadata>
