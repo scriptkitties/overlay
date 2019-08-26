@@ -23,5 +23,5 @@ src_compile() { :; }
 
 src_install() {
 	dobin nwatch
-	dodoc nwatch.1
+	doman nwatch.1
 }
