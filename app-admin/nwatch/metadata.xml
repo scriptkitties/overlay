@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>p.spek@tyil.work</email>
+		<name>Patrick "tyil" Spek</name>
+	</maintainer>
+	<longdescription lang="en">
+		Slightly friendlier version of the suggested script in the manual page
+		for ndiff(1) from the Nmap suite, implemented in Bash.
+	</longdescription>
+</pkgmetadata>
