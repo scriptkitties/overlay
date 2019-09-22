@@ -9,7 +9,7 @@ HOMEPAGE="https://voidlinux.org/"
 MY_PV="${PV}_1"
 MY_MAJOR=$(/bin/sed -E 's/([0-9]+.[0-9]+).[0-9]+/\1/' <<< "${PV}")
 
-SRC_BASE="http://mirror.aarnet.edu.au/pub/voidlinux/current"
+SRC_BASE="http://alpha.de.repo.voidlinux.org/current"
 SRC_AMD64_URI="${SRC_BASE}/linux${MY_MAJOR}-headers-${MY_PV}.x86_64.xbps"
 
 # .xbps is actually just .tar.xz. Rename it as such.
