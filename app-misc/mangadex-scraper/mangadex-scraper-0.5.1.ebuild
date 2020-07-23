@@ -188,8 +188,8 @@ LICENSE="
 	Apache-2.0
 
 	Apache-2.0-with-LLVM-exceptions
+	BSD
 	BSD-2
-	BSD-3
 	BSL-1.1
 	ISC
 	Unlicense
