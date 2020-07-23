@@ -183,7 +183,18 @@ SRC_URI="$(cargo_crate_uris ${CRATES})"
 RESTRICT="mirror"
 # License set may be more restrictive as OR is not respected
 # use cargo-license for a more accurate license picture
-LICENSE="Apache-2.0 Apache-2.0 WITH LLVM-exception BSD-2-Clause BSD-3-Clause BSL-1.0 ISC MIT Unlicense Zlib"
+LICENSE="
+	MIT
+	Apache-2.0
+
+	Apache-2.0-with-LLVM-exceptions
+	BSD-2
+	BSD-3
+	BSL-1.1
+	ISC
+	Unlicense
+	ZLIB
+"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
