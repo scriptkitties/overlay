@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="
 	dev-libs/glib:2
 	media-libs/glu
-	virtual/ffmpeg
+	media-video/ffmpeg
 	virtual/opengl
 	x11-libs/libva[X]
 	x11-libs/libvdpau
