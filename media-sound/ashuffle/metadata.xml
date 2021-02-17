@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>p.spek@tyil.work</email>
+		<name>Patrick Spek</name>
+	</maintainer>
+	<longdescription lang="en">
+		ashuffle is an application for automatically shuffling your MPD library
+		in a similar way to a more standard music player's "shuffle library"
+		feature. ashuffle works like any other MPD client, and can be used
+		alongside your other MPD frontends.
+	</longdescription>
+</pkgmetadata>
