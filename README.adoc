@@ -8,7 +8,7 @@ image:https://travis-ci.org/scriptkitties/overlay.svg?branch=master["Build Statu
 Installation using layman is pretty straightforward:
 
 ```
-layman -a scriptkitties
+layman -a sk-overlay
 emerge --sync
 ```
 
